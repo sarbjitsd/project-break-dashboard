@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meteo — Dashboard</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/weather.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar__logo" href="../index.html">JS</a>
+    <ul class="navbar__links">
+      <li><a href="clock.html">Reloj</a></li>
+      <li><a href="weather.html" class="active">Meteo</a></li>
+      <li><a href="password.html">Contraseñas</a></li>
+      <li><a href="links.html">Links</a></li>
+    </ul>
+  </nav>
+
+  <!-- Loader -->
+  <div id="loader-screen" class="loader-screen" hidden>
+    <div class="loader-spin"></div>
+    <p style="color:var(--text-muted);font-size:0.875rem;margin-top:12px">Cargando el tiempo…</p>
+  </div>
+
+  <!-- App (oculto hasta que carguen los datos) -->
+  <div id="app-screen" hidden>
+
+    <!-- Barra de búsqueda de ciudad -->
+    <div class="search-bar">
+      <div class="search-bar__inner">
+        <span id="app-location" class="search-bar__location">📍 —</span>
+        <div class="search-bar__right">
+          <span id="app-updated" class="search-bar__updated"></span>
+          <div class="search-wrap">
+            <input
+              type="text"
+              class="input search-input"
+              id="search-input"
+              placeholder="Buscar ciudad…"
+            />
+            <button class="btn btn--primary" id="search-btn">Buscar</button>
+          </div>
+        </div>
+      </div>
+      <p class="field-error" id="search-error"></p>
+    </div>
+
+    <div class="container fade-in">
+      <a href="../index.html" class="back-link">← Volver al Dashboard</a>
+
+      <h1 class="section-title">🌤️ Estación Meteorológica</h1>
+
+      <!-- Bloque principal -->
+      <div class="card weather-hero">
+        <div class="weather-main">
+          <img id="w-icon" src="" alt="" class="w-icon" />
+          <div>
+            <div class="w-temp" id="w-temp">—</div>
+            <div class="w-condition" id="w-condition">—</div>
+            <div class="w-feels" id="w-feels">—</div>
+          </div>
+        </div>
+        <div class="weather-stats">
+          <div class="w-stat">
+            <span class="label">💧 Precipitaciones</span>
+            <strong id="w-precip">—</strong>
+          </div>
+          <div class="w-stat">
+            <span class="label">💦 Humedad</span>
+            <strong id="w-humidity">—</strong>
+          </div>
+          <div class="w-stat">
+            <span class="label">💨 Viento</span>
+            <strong id="w-wind">—</strong>
+          </div>
+          <div class="w-stat">
+            <span class="label">☀️ Índice UV</span>
+            <strong id="w-uv">—</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Previsión por horas -->
+      <h2 class="section-title" style="margin-top:24px">Previsión por horas — hoy</h2>
+      <div class="hourly-wrap">
+        <div class="hourly-row" id="hourly-row"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">© 2026 Mi Dashboard — Proyecto Bootcamp</footer>
+  <script src="../js/weather.js"></script>
+  <script src="../js/bg.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+/* ─── Loader ─────────────────────────────────────── */
+.loader-screen {
+  min-height: 60vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.loader-spin {
+  width: 36px; height: 36px;
+  border: 3px solid var(--navy-border);
+  border-top-color: var(--blue-accent);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── Barra de búsqueda ──────────────────────────── */
+.search-bar {
+  background: var(--navy-mid);
+  border-bottom: 1px solid var(--navy-border);
+  padding: 10px 40px;
+}
+.search-bar__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 16px;
+  flex-wrap: wrap;
+}
+.search-bar__location {
+  font-size: 0.9rem; font-weight: 600;
+  color: var(--text);
+}
+.search-bar__right {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+}
+.search-bar__updated {
+  font-size: 0.72rem; color: var(--text-dim);
+}
+.search-wrap {
+  display: flex; gap: 8px;
+}
+.search-input {
+  width: 200px;
+}
+.field-error {
+  font-size: 0.75rem; color: #f87171;
+  min-height: 1em;
+  max-width: var(--max-w); margin: 4px auto 0;
+}
+
+/* ─── Hero bloque ────────────────────────────────── */
+.weather-hero {
+  display: flex; align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+.weather-main {
+  display: flex; align-items: center; gap: 16px;
+}
+.w-icon { width: 80px; height: 80px; }
+.w-temp {
+  font-size: 3.5rem; font-weight: 700;
+  line-height: 1; color: var(--text);
+}
+.w-condition {
+  font-size: 1rem; color: var(--text-muted); margin-top: 4px;
+  text-transform: capitalize;
+}
+.w-feels {
+  font-size: 0.82rem; color: var(--text-dim); margin-top: 4px;
+}
+
+/* ─── Stats grid ─────────────────────────────────── */
+.weather-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+}
+.w-stat { display: flex; flex-direction: column; gap: 2px; }
+.w-stat strong {
+  font-size: 1.05rem; color: var(--blue-accent);
+}
+
+/* ─── Previsión por horas ────────────────────────── */
+.hourly-wrap {
+  overflow-x: auto; padding-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--navy-border) transparent;
+}
+.hourly-wrap::-webkit-scrollbar { height: 4px; }
+.hourly-wrap::-webkit-scrollbar-thumb {
+  background: var(--navy-border); border-radius: 2px;
+}
+
+.hourly-row {
+  display: flex; gap: 8px;
+  width: max-content; padding: 2px;
+}
+
+.hour-card {
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 6px;
+  min-width: 78px;
+  transition: border-color 0.15s;
+}
+.hour-card:hover { border-color: var(--navy-hover); }
+
+.hour-card.now {
+  border-color: var(--blue-accent);
+  background: var(--navy-hover);
+}
+.hour-card__time {
+  font-size: 0.72rem; color: var(--text-muted);
+}
+.hour-card.now .hour-card__time {
+  color: var(--blue-accent); font-weight: 600;
+}
+.hour-card__icon { width: 36px; height: 36px; }
+.hour-card__temp { font-size: 0.95rem; font-weight: 600; }
+.hour-card__rain { font-size: 0.68rem; color: var(--text-dim); }
+
+/* ─── Responsive ─────────────────────────────────── */
+@media (max-width: 640px) {
+  .search-bar { padding: 10px 16px; }
+  .search-bar__inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .search-input { width: 160px; }
+  .weather-hero { flex-direction: column; }
+  .weather-stats { grid-template-columns: 1fr 1fr; }
+}

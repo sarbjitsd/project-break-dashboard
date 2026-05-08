@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Links — Dashboard</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/links.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="navbar__logo" href="../index.html">JS</a>
+    <ul class="navbar__links">
+      <li><a href="clock.html">Reloj</a></li>
+      <li><a href="weather.html">Meteo</a></li>
+      <li><a href="password.html">Contraseñas</a></li>
+      <li><a href="links.html" class="active">Links</a></li>
+    </ul>
+  </nav>
+
+  <div class="container fade-in">
+    <a href="../index.html" class="back-link">← Volver al Dashboard</a>
+
+    <h1 class="section-title">🔗 Mis Links</h1>
+
+    <!-- Formulario -->
+    <div class="card">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="label" for="input-titulo">Título</label>
+          <input type="text" class="input" id="input-titulo" placeholder="MDN Web Docs" />
+          <span class="field-error" id="err-titulo"></span>
+        </div>
+        <div class="form-group">
+          <label class="label" for="input-url">URL</label>
+          <input type="url" class="input" id="input-url" placeholder="https://developer.mozilla.org" />
+          <span class="field-error" id="err-url"></span>
+        </div>
+        <button class="btn btn--primary form-btn" id="add-btn">Añadir link</button>
+      </div>
+    </div>
+
+    <!-- Lista -->
+    <div id="empty-state" class="empty-state">
+      <span>🔗</span>
+      <p>Todavía no hay ningún link.<br>¡Añade el primero usando el formulario!</p>
+    </div>
+
+    <ul class="links-list" id="links-list"></ul>
+
+  </div>
+
+  <footer class="footer">© 2026 Mi Dashboard — Proyecto Bootcamp</footer>
+  <script src="../js/links.js"></script>
+  <script src="../js/bg.js"></script>
+</body>
+</html>

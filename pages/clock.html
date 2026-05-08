@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reloj — Dashboard</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/clock.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a class="navbar__logo" href="../index.html">JS</a>
+    <ul class="navbar__links">
+      <li><a href="clock.html" class="active">Reloj</a></li>
+      <li><a href="weather.html">Meteo</a></li>
+      <li><a href="password.html">Contraseñas</a></li>
+      <li><a href="links.html">Links</a></li>
+    </ul>
+  </nav>
+
+  <div class="container fade-in">
+    <a href="../index.html" class="back-link">← Volver al Dashboard</a>
+
+    <h1 class="section-title">🕐 Reloj Digital</h1>
+
+    <div class="card clock-card">
+      <div class="clock-time" id="clock-time">00:00:00</div>
+      <div class="clock-date" id="clock-date">—</div>
+      <div class="clock-msg" id="clock-msg"></div>
+    </div>
+
+    <div class="stats-row">
+      <div class="card stat-card">
+        <span class="stat-card__label">Día del año</span>
+        <span class="stat-card__val" id="day-of-year">—</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-card__label">Semana</span>
+        <span class="stat-card__val" id="week-num">—</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-card__label">Trimestre</span>
+        <span class="stat-card__val" id="quarter">—</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-card__label">Zona horaria</span>
+        <span class="stat-card__val stat-card__val--sm" id="timezone">—</span>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <p class="label">Progreso del día</p>
+      <div class="progress-wrap">
+        <div class="progress-bar" id="day-bar"></div>
+      </div>
+      <p class="label" style="margin-top:16px">Progreso del año</p>
+      <div class="progress-wrap">
+        <div class="progress-bar progress-bar--green" id="year-bar"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">© 2026 Mi Dashboard — Proyecto Bootcamp</footer>
+
+  <script src="../js/clock.js"></script>
+  <script src="../js/bg.js"></script>
+</body>
+</html>

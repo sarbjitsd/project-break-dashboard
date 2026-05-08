@@ -1,0 +1,37 @@
+.hero { padding: 32px 0 24px; }
+.hero__title { font-size: 1.8rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.hero__sub { color: var(--text-muted); font-size: 0.95rem; }
+
+.modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.module-card {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--navy-card); border: 1px solid var(--navy-border);
+  border-radius: var(--radius); padding: 18px 20px;
+  text-decoration: none; color: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+.module-card:hover { border-color: var(--blue-accent); background: var(--navy-hover); }
+
+.module-card__icon { font-size: 1.6rem; flex-shrink: 0; }
+.module-card__body { flex: 1; min-width: 0; }
+.module-card__title { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.module-card__desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+.module-card__arrow { color: var(--text-dim); font-size: 1rem; flex-shrink: 0; transition: transform 0.15s, color 0.15s; }
+.module-card:hover .module-card__arrow { transform: translateX(4px); color: var(--blue-accent); }
+
+.widgets-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.widget { display: flex; flex-direction: column; }
+.widget__label { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-bottom: 12px; }
+.widget__clock { font-size: 2.2rem; font-weight: 700; color: var(--text); letter-spacing: 0.02em; font-variant-numeric: tabular-nums; }
+.widget__date { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; }
+.widget__msg { font-size: 0.8rem; color: var(--blue-accent); margin-top: 10px; }
+.widget__links-count { font-size: 2.4rem; font-weight: 700; color: var(--blue-accent); }
+.widget__links-sub { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+@media (max-width: 640px) {
+  .modules-grid, .widgets-row { grid-template-columns: 1fr; }
+  .navbar { padding: 0 16px; }
+  .container { padding: 24px 16px; }
+}
